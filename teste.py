@@ -1,3 +1,4 @@
+from copy import copy
 from itertools import product,tee
 
 def verifyValues(value: list):
@@ -42,23 +43,22 @@ newVertices = []
 
 possibilidades = 0 
 copyVertices = vertices
-for i in vertices:
+for index,i in enumerate(vertices):
     soma=0
     
     for separetedValues in getSeparetedValues(list(i)):
-        soma += verifyValues(list(separetedValues))
-        if soma == 0:
-            copyVertices.remove(i)
+        if verifyValues(list(separetedValues)) == 0:
+            if i in copyVertices:
+                copyVertices.remove(i)
+        else: 
+            soma += verifyValues(list(separetedValues))
 
-
-    if soma <= 19:
-        possibilidades += 1
+    # if soma <= 19:
+    possibilidades += 1
         # print(f'sequencia vertices: {i},  Soma arestas: {soma} Km')
-
     soma = 0
 
-
 print(f"copyVertices: {copyVertices}")
-print(f"vertices: {vertices}")
+# print(f"vertices: {vertices}")
 print("Possibilidades: ",possibilidades)
 
