@@ -36,29 +36,26 @@ def getSeparetedValues(values: list):
 
 def rSubset(arr :list, r : int):
     return list(product(arr, repeat=r))
-
-vertices = rSubset('ABCDE', 5)
+    
+        
+grafo = rSubset(["A","B","C","D","E"], 5)
 newVertices = []
 
 
-possibilidades = 0 
-copyVertices = vertices
-for index,i in enumerate(vertices):
+copyGrafo = []
+for index,i in enumerate(grafo):
     soma=0
-    
+    result = []
     for separetedValues in getSeparetedValues(list(i)):
-        if verifyValues(list(separetedValues)) == 0:
-            if i in copyVertices:
-                copyVertices.remove(i)
-        else: 
-            soma += verifyValues(list(separetedValues))
-
+        result.append(verifyValues(list(separetedValues)))
+    if 0 not in result:
+        copyGrafo.append(i)
+    result = []
     # if soma <= 19:
-    possibilidades += 1
-        # print(f'sequencia vertices: {i},  Soma arestas: {soma} Km')
-    soma = 0
 
-print(f"copyVertices: {copyVertices}")
+        # print(f'sequencia vertices: {i},  Soma arestas: {soma} Km')
+
+print(f"copyVertices: {copyGrafo}")
 # print(f"vertices: {vertices}")
-print("Possibilidades: ",possibilidades)
+print("Possibilidades: ",len(copyGrafo))
 
