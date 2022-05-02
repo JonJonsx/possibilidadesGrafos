@@ -3,21 +3,21 @@ def verifyValues(value: list):
         return 0
     elif value == ['A', 'B'] or value == ['B', 'A']:
         return 1
-    elif value == ['B','C'] or value == ['C','B']:
+    elif value == ['B', 'C'] or value == ['C', 'B']:
         return 2
-    elif value == ['C','D'] or value == ['D','C']:
+    elif value == ['C', 'D'] or value == ['D', 'C']:
         return 3
-    elif value == ['D','E'] or value == ['E','D']:
+    elif value == ['D', 'E'] or value == ['E', 'D']:
         return 4
-    elif value == ['E','A'] or value == ['A','E']:
+    elif value == ['E', 'A'] or value == ['A', 'E']:
         return 5
-    elif value == ['A','C'] or value == ['C','A']:
+    elif value == ['A', 'C'] or value == ['C', 'A']:
         return 6
-    elif value == ['C','E'] or value == ['E','C']:
+    elif value == ['C', 'E'] or value == ['E', 'C']:
         return 7
-    elif value == ['B','E'] or value == ['E','B']:
+    elif value == ['B', 'E'] or value == ['E', 'B']:
         return 8
-    elif value == ['B','D'] or value == ['D','B']:
+    elif value == ['B', 'D'] or value == ['D', 'B']:
         return 9
-    elif value == ['A','D'] or value == ['D','A']:
+    elif value == ['A', 'D'] or value == ['D', 'A']:
         return 10
